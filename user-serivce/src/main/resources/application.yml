@@ -1,0 +1,24 @@
+
+server:
+  port: 8202
+spring:
+  application:
+    name: user-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8002/eureka/
+hystrix:
+  command:
+    HystrixComandKey: #将default换成HystrixComrnandKey
+      execution:
+        isolation:
+          strategy: THREAD
+  collapser:
+    HystrixCollapserKey: #将default换成HystrixCollapserKey
+      maxRequestsInBatch: 100
+  threadpool:
+    HystrixThreadPoolKey: #将default换成HystrixThreadPoolKey
+      coreSize: 10

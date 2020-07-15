@@ -1,0 +1,17 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: eureka-security-server
+  security: #\u914D\u7F6ESpringSecurity\u767B\u5F55\u7528\u6237\u540D\u548C\u5BC6\u7801
+    user:
+      name: macro
+      password: 123456
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${name}:${password}@${hostname}:${port}/eureka/ #\u6CE8\u518C\u5230\u53E6\u4E00\u4E2AEureka\u6CE8\u518C\u4E2D\u5FC3
+    fetch-registry: false
+    register-with-eureka: false
