@@ -8,7 +8,6 @@ import com.netflix.hystrix.contrib.javanica.cache.annotation.CacheResult;
 import com.netflix.hystrix.contrib.javanica.command.AsyncResult;
 import com.wzl.cloud.hystrixservice.entity.User;
 import domain.CommonResult;
-import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +15,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
-import utils.MyBeanUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.Future;
 
 /**
@@ -124,5 +121,10 @@ public class UserServiceImpl {
 //        userList.add(new User(2L, "andy", "123456"));
 //        return (User) commonResult.getData();
         return userList;
+    }
+
+    @HystrixCommand(fallbackMethod = "getDefaultUser")
+    public CommonResult getUserCommand(@PathVariable Long id) {
+        return restTemplate.getForObject(userServiceUrl + "/user/{1}", CommonResult.class, id);
     }
 }

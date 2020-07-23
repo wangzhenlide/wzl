@@ -4,11 +4,9 @@ import com.wzl.cloud.hystrixservice.entity.User;
 import com.wzl.cloud.hystrixservice.service.UserServiceImpl;
 import domain.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -54,13 +52,13 @@ public class UserHystrixController {
 //        User user = MyBeanUtils.mapToBean(map, User.class);
 
         Future<User> future1 = userService.getUserFuture(id);
-//        Future<User> future2 = userService.getUserFuture(2L);
+        Future<User> future2 = userService.getUserFuture(2L);
 //        Future<User> future3 = userService.getUserFuture(2L);
 //        Future<User> future4 = userService.getUserFuture(2L);
 //        Future<User> future5 = userService.getUserFuture(2L);
 //        Future<User> future6 = userService.getUserFuture(2L);
         future1.get();
-//        future2.get();
+        future2.get();
 //        future3.get();
 //        future4.get();
 //        future5.get();
@@ -71,4 +69,9 @@ public class UserHystrixController {
         return new CommonResult("操作成功", 200);
     }
 
+    @GetMapping("/testCommand/{id}")
+    public CommonResult testCommand(@PathVariable Long id) {
+        System.out.println(id + "==============");
+        return userService.getUserCommand(id);
+    }
 }
