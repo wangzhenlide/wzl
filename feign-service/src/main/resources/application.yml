@@ -1,0 +1,17 @@
+server:
+  port: 8701
+spring:
+  application:
+    name: feign-service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8002/eureka/
+feign:
+  hystrix:
+    enabled: true #\u5728Feign\u4E2D\u5F00\u542FHystrix
+logging:
+  level:
+    com.macro.cloud.service.UserService: debug

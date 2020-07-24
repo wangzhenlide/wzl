@@ -1,0 +1,19 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: zuul-proxy
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8002/eureka/
+zuul:
+  routes: #\u7ED9\u670D\u52A1\u914D\u7F6E\u8DEF\u7531
+    user-service:
+      path: /userService/**
+    feign-service:
+      path: /test/**
+  ignored-services: user-service,feign-service #\u5173\u95ED\u9ED8\u8BA4\u8DEF\u7531\u914D\u7F6E
+  prefix: /proxy #\u7ED9\u7F51\u5173\u8DEF\u7531\u6DFB\u52A0\u524D\u7F00

@@ -9,5 +9,5 @@ eureka:
   client:
 #    serviceUrl:
 #      defaultZone: http://localhost:8003/eureka/ #注册到另一个Eureka注册中心
-    fetch-registry: false
-    register-with-eureka: false
+    fetch-registry: true
+    register-with-eureka: true
