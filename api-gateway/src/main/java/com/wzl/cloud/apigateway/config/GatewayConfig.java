@@ -17,7 +17,7 @@ public class GatewayConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route("path_route2", r -> r.path("/user/getByUsername")
-                        .uri("http://localhost:8201/user/getByUsername"))
+                        .uri("http://localhost:8202/user/getByUsername"))
                 .build();
     }
 

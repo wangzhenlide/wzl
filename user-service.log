@@ -1,0 +1,91 @@
+2020-07-30 14:17:10.025  INFO [user-service,,,] 13032 --- [main] c.w.c.u.UserSerivceApplication           : No active profile set, falling back to default profiles: default
+2020-07-30 14:17:12.076  WARN [user-service,,,] 13032 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-07-30 14:17:12.364  INFO [user-service,,,] 13032 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=353819f4-320c-3b03-b614-85f80f643e8f
+2020-07-30 14:17:13.143  INFO [user-service,,,] 13032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8202 (http)
+2020-07-30 14:17:13.154  INFO [user-service,,,] 13032 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-30 14:17:13.154  INFO [user-service,,,] 13032 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-30 14:17:13.371  INFO [user-service,,,] 13032 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-30 14:17:13.371  INFO [user-service,,,] 13032 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3322 ms
+2020-07-30 14:17:13.509  WARN [user-service,,,] 13032 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-07-30 14:17:13.509  INFO [user-service,,,] 13032 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-30 14:17:13.518  INFO [user-service,,,] 13032 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3b2553d9
+2020-07-30 14:17:14.405  WARN [user-service,,,] 13032 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@6b2dd3df] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": connect timed out; nested exception is java.net.SocketTimeoutException: connect timed out}]
+2020-07-30 14:17:15.248  WARN [user-service,,,] 13032 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-07-30 14:17:15.248  INFO [user-service,,,] 13032 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-30 14:17:15.556  INFO [user-service,,,] 13032 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-30 14:17:16.384  WARN [user-service,,,] 13032 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-07-30 14:17:16.963  INFO [user-service,,,] 13032 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+2020-07-30 14:17:17.049  INFO [user-service,,,] 13032 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-07-30 14:17:17.078  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-07-30 14:17:17.431  INFO [user-service,,,] 13032 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-07-30 14:17:17.431  INFO [user-service,,,] 13032 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-07-30 14:17:17.520  INFO [user-service,,,] 13032 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-07-30 14:17:17.520  INFO [user-service,,,] 13032 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-07-30 14:17:17.694  INFO [user-service,,,] 13032 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-07-30 14:17:17.905  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-07-30 14:17:17.906  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-07-30 14:17:17.906  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-07-30 14:17:17.906  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-07-30 14:17:17.906  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-07-30 14:17:17.906  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-07-30 14:17:17.906  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-07-30 14:17:18.042  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-07-30 14:17:18.045  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-07-30 14:17:18.047  INFO [user-service,,,] 13032 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-07-30 14:17:18.050  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1596089838049 with initial instances count: 2
+2020-07-30 14:17:18.055  INFO [user-service,,,] 13032 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2020-07-30 14:17:18.056  INFO [user-service,,,] 13032 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1596089838056, current=UP, previous=STARTING]
+2020-07-30 14:17:18.058  INFO [user-service,,,] 13032 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/host.docker.internal:user-service:8202: registering service...
+2020-07-30 14:17:18.084  INFO [user-service,,,] 13032 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8202 (http) with context path ''
+2020-07-30 14:17:18.085  INFO [user-service,,,] 13032 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8202
+2020-07-30 14:17:18.092  INFO [user-service,,,] 13032 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/host.docker.internal:user-service:8202 - registration status: 204
+2020-07-30 14:17:18.458  INFO [user-service,,,] 13032 --- [main] c.w.c.u.UserSerivceApplication           : Started UserSerivceApplication in 13.132 seconds (JVM running for 14.955)
+2020-07-30 14:17:19.269  INFO [user-service,,,] 13032 --- [RMI TCP Connection(3)-192.168.0.175] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-30 14:17:19.270  INFO [user-service,,,] 13032 --- [RMI TCP Connection(3)-192.168.0.175] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-30 14:17:19.282  INFO [user-service,,,] 13032 --- [RMI TCP Connection(3)-192.168.0.175] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-07-30 14:18:44.331  INFO [user-service,,,] 11516 --- [main] c.w.c.u.UserSerivceApplication           : No active profile set, falling back to default profiles: default
+2020-07-30 14:18:45.897  WARN [user-service,,,] 11516 --- [main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-07-30 14:18:46.091  INFO [user-service,,,] 11516 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=353819f4-320c-3b03-b614-85f80f643e8f
+2020-07-30 14:18:46.647  INFO [user-service,,,] 11516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8202 (http)
+2020-07-30 14:18:46.657  INFO [user-service,,,] 11516 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-07-30 14:18:46.657  INFO [user-service,,,] 11516 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-30 14:18:46.836  INFO [user-service,,,] 11516 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-07-30 14:18:46.836  INFO [user-service,,,] 11516 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2439 ms
+2020-07-30 14:18:46.959  WARN [user-service,,,] 11516 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-07-30 14:18:46.959  INFO [user-service,,,] 11516 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-30 14:18:46.967  INFO [user-service,,,] 11516 --- [main] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@3234474
+2020-07-30 14:18:47.770  WARN [user-service,,,] 11516 --- [main] o.s.c.s.zipkin2.ZipkinAutoConfiguration  : Check result of the [org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@5707f613] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": connect timed out; nested exception is java.net.SocketTimeoutException: connect timed out}]
+2020-07-30 14:18:48.498  WARN [user-service,,,] 11516 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2020-07-30 14:18:48.498  INFO [user-service,,,] 11516 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-07-30 14:18:48.765  INFO [user-service,,,] 11516 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-30 14:18:49.458  WARN [user-service,,,] 11516 --- [main] ockingLoadBalancerClientRibbonWarnLogger : You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-07-30 14:18:49.925  INFO [user-service,,,] 11516 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoint(s) beneath base path '/actuator'
+2020-07-30 14:18:50.001  INFO [user-service,,,] 11516 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2020-07-30 14:18:50.031  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2020-07-30 14:18:50.393  INFO [user-service,,,] 11516 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+2020-07-30 14:18:50.393  INFO [user-service,,,] 11516 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+2020-07-30 14:18:50.487  INFO [user-service,,,] 11516 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+2020-07-30 14:18:50.487  INFO [user-service,,,] 11516 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+2020-07-30 14:18:50.709  INFO [user-service,,,] 11516 --- [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2020-07-30 14:18:50.916  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2020-07-30 14:18:51.034  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2020-07-30 14:18:51.037  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2020-07-30 14:18:51.039  INFO [user-service,,,] 11516 --- [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-07-30 14:18:51.042  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1596089931041 with initial instances count: 3
+2020-07-30 14:18:51.047  INFO [user-service,,,] 11516 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application USER-SERVICE with eureka with status UP
+2020-07-30 14:18:51.048  INFO [user-service,,,] 11516 --- [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1596089931047, current=UP, previous=STARTING]
+2020-07-30 14:18:51.050  INFO [user-service,,,] 11516 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/host.docker.internal:user-service:8202: registering service...
+2020-07-30 14:18:51.078  INFO [user-service,,,] 11516 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8202 (http) with context path ''
+2020-07-30 14:18:51.079  INFO [user-service,,,] 11516 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8202
+2020-07-30 14:18:51.084  INFO [user-service,,,] 11516 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_USER-SERVICE/host.docker.internal:user-service:8202 - registration status: 204
+2020-07-30 14:18:51.409  INFO [user-service,,,] 11516 --- [main] c.w.c.u.UserSerivceApplication           : Started UserSerivceApplication in 9.715 seconds (JVM running for 11.047)
+2020-07-30 14:18:52.297  INFO [user-service,,,] 11516 --- [RMI TCP Connection(2)-192.168.0.175] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-30 14:18:52.298  INFO [user-service,,,] 11516 --- [RMI TCP Connection(2)-192.168.0.175] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-07-30 14:18:52.331  INFO [user-service,,,] 11516 --- [RMI TCP Connection(2)-192.168.0.175] o.s.web.servlet.DispatcherServlet        : Completed initialization in 33 ms
+2020-07-30 14:23:50.920  INFO [user-service,,,] 11516 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
