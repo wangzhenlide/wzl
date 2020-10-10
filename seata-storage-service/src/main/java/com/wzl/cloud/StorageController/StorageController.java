@@ -2,6 +2,7 @@ package com.wzl.cloud.StorageController;
 
 import com.wzl.cloud.service.StorageService;
 import domain.CommonResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,7 @@ public class StorageController {
     /**
      * 扣减库存
      */
-    @RequestMapping("/decrease")
+    @GetMapping("/decrease")
     public CommonResult decrease(Long productId, Integer count) {
         storageService.decrease(productId, count);
         return new CommonResult("扣减库存成功！",200);

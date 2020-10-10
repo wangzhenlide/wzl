@@ -39,6 +39,11 @@
         <module>oauth2-client</module>
         <module>nacos-client</module>
         <module>nacos-config-client</module>
+        <module>seata-order-service</module>
+        <module>seata-account-service</module>
+        <module>seata-storage-service</module>
+        <module>micro-oauth2-auth</module>
+        <module>micro-oauth2-gateway</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

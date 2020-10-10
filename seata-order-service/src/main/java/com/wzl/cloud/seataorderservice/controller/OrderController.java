@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 
 /**
  * @Description
@@ -26,6 +27,12 @@ public class OrderController {
      */
     @GetMapping("/create")
     public CommonResult create(Order order) {
+        order = new Order();
+        order.setId(1L);
+        order.setUserId(1L);
+        order.setMoney(BigDecimal.ONE);
+        order.setProductId(1L);
+        order.setCount(1);
         orderService.create(order);
         return new CommonResult("订单创建成功!", 200);
     }

@@ -1,14 +1,13 @@
 package com.wzl.cloud.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import io.seata.rm.datasource.DataSourceProxy;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
@@ -21,29 +20,54 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceProxyConfig {
 
+    /**
+     * autowired datasource config
+     */
+    @Autowired
+    private DataSourceProperties dataSourceProperties;
 
-    @Value("${mybatis.mapperLocations}")
-    private String mapperLocations;
-
+    /**
+     * init durid datasource
+     *
+     * @Return: druidDataSource  datasource instance
+     */
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource druidDataSource(){
-        return new DruidDataSource();
+    @Primary
+    public DruidDataSource druidDataSource() {
+        DruidDataSource druidDataSource = new DruidDataSource();
+        druidDataSource.setUrl(dataSourceProperties.getUrl());
+        druidDataSource.setUsername(dataSourceProperties.getUsername());
+        druidDataSource.setPassword(dataSourceProperties.getPassword());
+        druidDataSource.setDriverClassName(dataSourceProperties.getDriverClassName());
+        druidDataSource.setInitialSize(0);
+        druidDataSource.setMaxActive(180);
+        druidDataSource.setMaxWait(60000);
+        druidDataSource.setMinIdle(0);
+        druidDataSource.setValidationQuery("Select 1 from DUAL");
+        druidDataSource.setTestOnBorrow(false);
+        druidDataSource.setTestOnReturn(false);
+        druidDataSource.setTestWhileIdle(true);
+        druidDataSource.setTimeBetweenEvictionRunsMillis(60000);
+        druidDataSource.setMinEvictableIdleTimeMillis(25200000);
+        druidDataSource.setRemoveAbandoned(true);
+        druidDataSource.setRemoveAbandonedTimeout(1800);
+        druidDataSource.setLogAbandoned(true);
+        return druidDataSource;
     }
 
+    /**
+     * init mybatis sqlSessionFactory
+     *
+     * @Param: dataSourceProxy  datasource proxy
+     * @Return: DataSourceProxy  datasource proxy
+     */
     @Bean
-    public DataSourceProxy dataSourceProxy(DataSource dataSource) {
-        return new DataSourceProxy(dataSource);
-    }
-
-    @Bean
-    public SqlSessionFactory sqlSessionFactoryBean(DataSourceProxy dataSourceProxy) throws Exception {
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-        sqlSessionFactoryBean.setDataSource(dataSourceProxy);
-        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources(mapperLocations));
-        sqlSessionFactoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
-        return sqlSessionFactoryBean.getObject();
+    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+        SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+        factoryBean.setDataSource(dataSource);
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
+                .getResources("classpath*:/mapper/*.xml"));
+        return factoryBean.getObject();
     }
 
 }
